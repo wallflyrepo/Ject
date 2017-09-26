@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/luxnovaco@gmail.com/Ject'
+  s.homepage         = 'https://github.com/wallflyrepo/Ject'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'luxnovaco@gmail.com' => 'joshua.williams@scrippsnetworks.com' }
-  s.source           = { :git => 'https://github.com/luxnovaco@gmail.com/Ject.git', :tag => s.version.to_s }
+  s.license          = { :type => 'Apache', :file => 'LICENSE' }
+  s.author           = { 'luxnovaco@gmail.com' => 'jwilliams94.jw@gmail.com' }
+  s.source           = { :git => 'https://github.com/wallflyrepo/Ject.git', :tag => '1.0.0' }
   # s.social_media_url = 'https://twitter.com/hyyypower'
 
   s.ios.deployment_target = '8.0'
