@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Ject'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Simple Dependency Injection'
 
 # This description is used to generate tags and improve search results.
@@ -24,8 +24,8 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/wallflyrepo/Ject'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
-  s.author           = { 'luxnovaco@gmail.com' => 'jwilliams94.jw@gmail.com' }
-  s.source           = { :git => 'https://github.com/wallflyrepo/Ject.git', :tag => '1.0.0' }
+  s.author           = { 'superuserdid' => 'jwilliams94.jw@gmail.com' }
+  s.source           = { :git => 'https://github.com/wallflyrepo/Ject.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/hyyypower'
 
   s.ios.deployment_target = '8.0'
