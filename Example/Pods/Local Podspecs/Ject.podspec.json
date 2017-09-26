@@ -1,0 +1,22 @@
+{
+  "name": "Ject",
+  "version": "0.1.0",
+  "summary": "A short description of Ject.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/luxnovaco@gmail.com/Ject",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "luxnovaco@gmail.com": "joshua.williams@scrippsnetworks.com"
+  },
+  "source": {
+    "git": "https://github.com/luxnovaco@gmail.com/Ject.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Ject/Classes/**/*"
+}

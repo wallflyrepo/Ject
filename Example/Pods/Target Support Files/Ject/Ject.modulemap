@@ -1,0 +1,6 @@
+framework module Ject {
+  umbrella header "Ject-umbrella.h"
+
+  export *
+  module * { export * }
+}
