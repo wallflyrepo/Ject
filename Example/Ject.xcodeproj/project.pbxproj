@@ -38,7 +38,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				E4B167011F7BE16A00623DE9 /* Example */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -97,13 +96,6 @@
 				397FCDDA87AE180E167E809C /* Pods_Ject_Tests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E4B167011F7BE16A00623DE9 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
