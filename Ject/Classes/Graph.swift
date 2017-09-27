@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Graph {
+public class Graph {
     
     private var mDependencyGraph = [String: Injectable]()
     
