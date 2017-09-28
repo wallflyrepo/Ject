@@ -1,9 +1,22 @@
 # Ject
+========
 
 [![Version](https://img.shields.io/cocoapods/v/Ject.svg?style=flat)](http://cocoapods.org/pods/Ject)
 [![License](https://img.shields.io/cocoapods/l/Ject.svg?style=flat)](http://cocoapods.org/pods/Ject)
 [![Platform](https://img.shields.io/cocoapods/p/Ject.svg?style=flat)](http://cocoapods.org/pods/Ject)
 [![Swift](https://camo.githubusercontent.com/554ea67e349e9c175f5bc52cf64519bc7471b986/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53776966742d332d4631364433392e7376673f7374796c653d666c6174)](http://cocoapods.org/pods/Ject)
+
+Ject is a simple, lightweight, quick solution for [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) for Swift.
+
+It is designed with quick integration and set up in mind for the creative developer, ideal for small to medium sized projects. Ject takes inspiration from [Dagger2](https://google.github.io/dagger/), intended to provide simplicity over all for adding Dependency Injection to your project.
+
+Ject is currently in Beta. 
+
+
+Getting Started
+-----------------------
+
+
 
 ## Requirements
 - Swift 3
