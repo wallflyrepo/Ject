@@ -1,5 +1,4 @@
 # Ject
-========
 
 [![Version](https://img.shields.io/cocoapods/v/Ject.svg?style=flat)](http://cocoapods.org/pods/Ject)
 [![License](https://img.shields.io/cocoapods/l/Ject.svg?style=flat)](http://cocoapods.org/pods/Ject)
@@ -16,20 +15,64 @@ Ject is currently in Beta.
 Getting Started
 -----------------------
 
+#### Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate Ject into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Ject'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+#### Making a class Injectable
+
+In order to use Ject Dependency Injection, your dependencies must inherit from `Injectable`. Declare your class and have it implement `Injectable` from the `Ject` pod like so
+
+```swift
+class ViewUtils: Injectable {
+
+    required init() {
+        //Default Constructor
+    }
+
+    func inject(graph: Graph) -> Injectable {
+        return ViewUtils()
+    }
+
+    func isSingleton() -> Bool {
+        return true
+    }
+
+}
+```
+
+#### Injecting Dependencies into Dependencies
+
+Many times your dependencies has dependencies of their own. Using Ject, you can simple inject these dependencies using two methods:
+
+
 
 
 ## Requirements
-- Swift 3
-- iOS 8.0+
+- [x] Swift 3
+- [x] iOS 8.0+
 
-## Installation
 
-Ject is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'Ject'
-```
 
 ## License
 
