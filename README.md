@@ -12,6 +12,10 @@ It is designed with quick integration and set up in mind for the creative develo
 Ject is currently in Beta. 
 
 
+## Requirements
+- [x] Swift 3
+- [x] iOS 8.0+
+
 Getting Started
 -----------------------
 
@@ -22,6 +26,7 @@ Getting Started
 ```bash
 $ gem install cocoapods
 ```
+`
 
 To integrate Ject into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
@@ -32,12 +37,24 @@ use_frameworks!
 
 pod 'Ject'
 ```
+`
 
 Then, run the following command:
 
 ```bash
 $ pod install
 ```
+`
+
+#### Creating a Dependency Graph
+
+You can easily create a new `Graph` using 
+
+```swift
+    let dependencyGraph = Graph.newInstance()
+```
+`
+
 
 #### Making a class Injectable
 
@@ -60,18 +77,76 @@ class ViewUtils: Injectable {
 
 }
 ```
+`
 
 #### Injecting Dependencies into Dependencies
 
 Many times your dependencies has dependencies of their own. Using Ject, you can simple inject these dependencies using two methods:
 
+- Constructor Injection
 
+Simply add your dependencies to your constructor as parameters as you normally would. Ideally these dependencies would also inherit from `Injectable`. 
 
+```swift
+class ViewUtils: Injectable {
 
-## Requirements
-- [x] Swift 3
-- [x] iOS 8.0+
+    var mIconManager: IconManager?
 
+    var mColorManager: ColorManager?
+
+    init(iconManager: IconManager, colorManager: ColorManager) {
+        mIconManager = iconManager
+        mColorManager = colorManager
+    }
+
+    required init() {
+        //Default Constructor
+    }
+
+    func inject(graph: Graph) -> Injectable {
+        //Use your constructor here to inject your Injectable Dependencies
+        return ViewUtils(iconManager: graph.inject(IconManager.self), colorManager: graph.inject(ColorManager.self))
+    }
+
+    func isSingleton() -> Bool {
+        return true
+    }
+
+}
+```
+`
+
+- Property Injection
+
+You can also inject dependencies directly into properties as follows
+
+```swift
+class ViewUtils: Injectable {
+
+    var mIconManager: IconManager {
+        return mGraph.inject(IconManager.self)
+    }
+
+    var mColorManager: ColorManager {
+        return mGraph.inject(ColorManager.self)
+    }
+
+    required init() {
+        //Default Constructor
+    }
+
+    func inject(graph: Graph) -> Injectable {
+        //Use your constructor here to inject your Injectable Dependencies
+        return ViewUtils(iconManager: graph.inject(IconManager.self), colorManager: graph.inject(ColorManager.self))
+    }
+
+    func isSingleton() -> Bool {
+        return true
+    }
+
+}
+```
+`
 
 
 ## License
