@@ -55,6 +55,26 @@ You can easily create a new `Graph` using
 ```
 `
 
+It is recommended to keep one reference to your Graph with your dependencies. A good solution is to create a property in your `AppDelegate.swift` file
+
+```swift
+import Ject
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    private var _mGraph: Graph?
+
+    var mGraph: Graph {
+        if(mGraph == nil) {
+            mGraph = Graph.newInstance()
+        }
+        return mGraph!
+    }
+    
+    ...
+}
+```
+`
 
 #### Making a class Injectable
 
@@ -82,6 +102,8 @@ class ViewUtils: Injectable {
 #### Injecting Dependencies into Dependencies
 
 Many times your dependencies has dependencies of their own. Using Ject, you can simple inject these dependencies using two methods:
+
+
 
 - Constructor Injection
 
@@ -123,6 +145,10 @@ You can also inject dependencies directly into properties as follows
 ```swift
 class ViewUtils: Injectable {
 
+    var mGraph: Graph {
+        return (UIApplication.shared.delegate as! AppDelegate).mGraph
+    }
+
     var mIconManager: IconManager {
         return mGraph.inject(IconManager.self)
     }
@@ -136,8 +162,7 @@ class ViewUtils: Injectable {
     }
 
     func inject(graph: Graph) -> Injectable {
-        //Use your constructor here to inject your Injectable Dependencies
-        return ViewUtils(iconManager: graph.inject(IconManager.self), colorManager: graph.inject(ColorManager.self))
+        return ViewUtils()
     }
 
     func isSingleton() -> Bool {
