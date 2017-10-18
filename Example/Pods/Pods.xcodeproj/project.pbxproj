@@ -11,6 +11,8 @@
 		86593681184FFD76CA95B944539BD0E6 /* Pods-Ject_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1ECEA19B0B6B7597C704D05C997E64 /* Pods-Ject_Tests-dummy.m */; };
 		93EC81047BEFE5DBD7ABE1C8063F7BDE /* Pods-Ject_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 985A989F512B2234CD51C99D1C930B27 /* Pods-Ject_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9EEAFC5AB477229DCDB18F9733E690C4 /* Ject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA20D6EA88C0F126B9F02E7EF8D48B04 /* Ject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E401673E1F812EE40082D230 /* DependencyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E401673D1F812EE40082D230 /* DependencyGraph.swift */; };
+		E40167401F812F5C0082D230 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E401673F1F812F5C0082D230 /* DependencyManager.swift */; };
 		E43B13941F7A9B4900FE4F1D /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B13931F7A9B4900FE4F1D /* Injectable.swift */; };
 		E43B13961F7A9B5300FE4F1D /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B13951F7A9B5300FE4F1D /* Graph.swift */; };
 		E43B13981F7A9B6200FE4F1D /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B13971F7A9B6200FE4F1D /* LogManager.swift */; };
@@ -46,6 +48,8 @@
 		BCD771830B495E30891099C20467174C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C216681605009F4B305A2FBEB5C80332 /* Pods-Ject_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ject_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA20D6EA88C0F126B9F02E7EF8D48B04 /* Ject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ject-umbrella.h"; sourceTree = "<group>"; };
+		E401673D1F812EE40082D230 /* DependencyGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyGraph.swift; sourceTree = "<group>"; };
+		E401673F1F812F5C0082D230 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		E43B13931F7A9B4900FE4F1D /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Injectable.swift; path = ../Sources/Injectable.swift; sourceTree = "<group>"; };
 		E43B13951F7A9B5300FE4F1D /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = ../Sources/Graph.swift; sourceTree = "<group>"; };
 		E43B13971F7A9B6200FE4F1D /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogManager.swift; path = ../Sources/LogManager.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 			children = (
 				E43B13971F7A9B6200FE4F1D /* LogManager.swift */,
 				E43B13951F7A9B5300FE4F1D /* Graph.swift */,
+				E401673F1F812F5C0082D230 /* DependencyManager.swift */,
+				E401673D1F812EE40082D230 /* DependencyGraph.swift */,
 				E43B13931F7A9B4900FE4F1D /* Injectable.swift */,
 				6758D873E3F7238AF6461B97B7827FB8 /* Support Files */,
 			);
@@ -237,7 +243,7 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					56552E07D5D6D8FC3D62643E1FE2D650 = {
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -272,9 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E401673E1F812EE40082D230 /* DependencyGraph.swift in Sources */,
 				E43B13981F7A9B6200FE4F1D /* LogManager.swift in Sources */,
 				E43B13961F7A9B5300FE4F1D /* Graph.swift in Sources */,
 				E43B13941F7A9B4900FE4F1D /* Injectable.swift in Sources */,
+				E40167401F812F5C0082D230 /* DependencyManager.swift in Sources */,
 				08F0D4A1F184A6F927F66F38E4653DDC /* Ject-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,7 +498,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -526,7 +535,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

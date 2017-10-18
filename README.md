@@ -26,7 +26,7 @@ Getting Started
 ```bash
 $ gem install cocoapods
 ```
-`
+
 
 To integrate Ject into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
@@ -37,44 +37,48 @@ use_frameworks!
 
 pod 'Ject'
 ```
-`
+
 
 Then, run the following command:
 
 ```bash
 $ pod install
 ```
-`
+
 
 #### Creating a Dependency Graph
 
-You can easily create a new `Graph` using 
+You can easily create a new `DependencyManager` using
 
 ```swift
-    let dependencyGraph = Graph.newInstance()
+let dependencyManager = DependencyManager()
 ```
-`
 
-It is recommended to keep one reference to your Graph with your dependencies. A good solution is to create a property in your `AppDelegate.swift` file
+Or you can define your own `DependencyGraph` implementation using
+
+```swift
+let dependencyManager = DependencyManager(MyDependencyGraph())
+```
+
+It is recommended to keep one reference to your Graph with your dependencies. A good solution is to create a property in struct that is lazily instantiated 
 
 ```swift
 import Ject
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+struct Dependencies {
 
-    private var _mGraph: Graph?
+    static var instance = Dependencies()
 
-    var mGraph: Graph {
-        if(mGraph == nil) {
-            mGraph = Graph.newInstance()
-        }
-        return mGraph!
+    lazy var manager = DependencyManager()
+
+    private init(){
+        //Default Constructor
     }
     
     ...
 }
 ```
-`
+
 
 #### Making a class Injectable
 
@@ -87,7 +91,7 @@ class ViewUtils: Injectable {
         //Default Constructor
     }
 
-    func inject(graph: Graph) -> Injectable {
+    func inject(dependencyGraph: Graph) -> Injectable {
         return ViewUtils()
     }
 
@@ -97,11 +101,11 @@ class ViewUtils: Injectable {
 
 }
 ```
-`
+
 
 #### Injecting Dependencies into Dependencies
 
-Many times your dependencies has dependencies of their own. Using Ject, you can simple inject these dependencies using two methods:
+Many times your dependencies have dependencies of their own. Using Ject, you can simple inject these dependencies using two methods:
 
 
 
@@ -125,9 +129,9 @@ class ViewUtils: Injectable {
         //Default Constructor
     }
 
-    func inject(graph: Graph) -> Injectable {
+    func inject(dependencyGraph: Graph) -> Injectable {
         //Use your constructor here to inject your Injectable Dependencies
-        return ViewUtils(iconManager: graph.inject(IconManager.self), colorManager: graph.inject(ColorManager.self))
+        return ViewUtils(iconManager: dependencyGraph.inject(IconManager.self), colorManager: dependencyGraph.inject(ColorManager.self))
     }
 
     func isSingleton() -> Bool {
@@ -136,7 +140,7 @@ class ViewUtils: Injectable {
 
 }
 ```
-`
+
 
 - Property Injection
 
@@ -145,23 +149,23 @@ You can also inject dependencies directly into properties as follows
 ```swift
 class ViewUtils: Injectable {
 
-    var mGraph: Graph {
-        return (UIApplication.shared.delegate as! AppDelegate).mGraph
+    var manager: DependencyManager {
+        return Dependencies.instance.manager
     }
 
     var mIconManager: IconManager {
-        return mGraph.inject(IconManager.self)
+        return manager.inject(IconManager.self)
     }
 
     var mColorManager: ColorManager {
-        return mGraph.inject(ColorManager.self)
+        return manager.inject(ColorManager.self)
     }
 
     required init() {
         //Default Constructor
     }
 
-    func inject(graph: Graph) -> Injectable {
+    func inject(dependencyGraph: Graph) -> Injectable {
         return ViewUtils()
     }
 
@@ -171,7 +175,7 @@ class ViewUtils: Injectable {
 
 }
 ```
-`
+
 
 
 ## License
