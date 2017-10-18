@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         logUtils.print(statement: "Some Statement.")
         
         let imageView = UIImageView()
-        imageView.tag = "Image View Tag"
+        imageView.tag = 5
         viewUtils.printViewStuff(view: imageView)
     }
 
