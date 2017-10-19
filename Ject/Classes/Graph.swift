@@ -8,35 +8,74 @@
 
 import Foundation
 
-public class Graph {
+/**
+ * Default Dependency Graph. This graph determines whether a dependency is a Singleton or not. If it is a Singleton, it is stored in a dictionary
+ * to be used later. This class is public so you can subclass it.
+ **/
+public class Graph: DependencyGraph {
     
-    private var mDependencyGraph = [String: Injectable]()
+    /**
+     * Dictionary that holds singleton dependencies
+     **/
+    private var singletonDependencyGraph = [String: Injectable]()
     
-    private let mLogManager: LogManager
-    
-    init(_ logManager: LogManager) {
-        mLogManager = logManager
+    /**
+     * LogManager instance to log things.
+     **/
+    private var logManager: LogManager?
+ 
+    /**
+     * Default constructor
+     **/
+    init() {
+        //Default Constructor
     }
     
-    private func getClassName(_ type: Any) -> String {
+    /**
+     * Instantiate this class with a log manager
+     **/
+    init(_ logManager: LogManager) {
+        self.logManager = logManager
+    }
+    
+    /**
+     * Construct a new default instance.
+     **/
+    public static func newInstance() -> Graph {
+        return Graph(LogManager(Graph.self))
+    }
+  
+    /**
+     * Retrieves the name of the class passed as a parameter.
+     **/
+    private func description(_ type: Any) -> String {
         return String(describing: type)
     }
     
+    /**
+     * Returns a dependency from the singleton dependency graph or nil
+     **/
     private func getDependency<T: Injectable>(_ injectableClass: Any) -> T? {
-        let className = getClassName(injectableClass)
-        if let dependency = mDependencyGraph[className] {
-            mLogManager.print("Dependency \(className) was found.")
-            return dependency as? T
+        let className = description(injectableClass)
+        guard let dependency = singletonDependencyGraph[className] else {
+            logManager?.print("Dependency \(className) was not found. instantiating.")
+            return nil
         }
-        mLogManager.print("Dependency \(className) was not found. instantiating.")
-        return nil
+        logManager?.print("Dependency \(description) was found.")
+        return dependency as? T
     }
     
-    func inject<T: Injectable>(_ injectableClass: T.Type) -> T {
+    /**
+     * Injects an Injectable dependency into a class using its Type (Class.self).
+     **/
+    public func inject<T: Injectable>(_ injectableClass: T.Type) -> T {
         return inject(injectableClass.init())
     }
     
-    func inject<T: Injectable>(_ injectableClass: Injectable) -> T {
+    /**
+     * Injects an Injectable dependency into a class using an instance of the class.
+     **/
+    public func inject<T: Injectable>(_ injectableClass: Injectable) -> T {
         let key = type(of: injectableClass as Any)
         
         var resolvedDependency: T
@@ -44,7 +83,7 @@ public class Graph {
             if let dependency: T = getDependency(key) {
                 return dependency
             }
-            mDependencyGraph[getClassName(key)] = injectableClass.inject(dependencyGraph: self)
+            singletonDependencyGraph[description(key)] = injectableClass.inject(dependencyGraph: self)
             resolvedDependency = inject(injectableClass)
         } else {
             resolvedDependency = injectableClass.inject(dependencyGraph: self) as! T
