@@ -26,7 +26,7 @@ class LogUtils: Injectable {
     required init() {
     }
     
-    func inject(dependencyGraph: Graph) -> Injectable {
+    func inject(dependencyGraph: DependencyGraph) -> Injectable {
         return LogUtils()
     }
     
@@ -52,7 +52,7 @@ class ViewUtils: Injectable {
         self.logUtils = logUtils
     }
     
-    func inject(dependencyGraph: Graph) -> Injectable {
+    func inject(dependencyGraph: DependencyGraph) -> Injectable {
         return ViewUtils(dependencyGraph.inject(LogUtils.self))
     }
     

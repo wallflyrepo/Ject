@@ -46,16 +46,16 @@ internal class LogManager {
     fileprivate func printLog(log : String, functionName: String = #function) {
         #if DEBUG
             let className = String(describing: type(of: parentClass)).components(separatedBy: ".").last!
-            print("[\(className).\(functionName)] - \(log) \n")
+            printLogToSystem("[\(className).\(functionName)] - \(log) \n")
         #else
-            print("Statement logged. App is in production. Use Debug build to see log statements")
+            printLogToSystem("Statement logged. App is in production. Use Debug build to see log statements")
         #endif
     }
     
     /**
      * Uses NSLog to print a statement.
      **/
-    fileprivate func print(log: String) {
+    fileprivate func printLogToSystem(_ log: String) {
         NSLog(log)
     }
     
