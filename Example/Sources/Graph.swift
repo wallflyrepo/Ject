@@ -61,7 +61,7 @@ public class Graph: DependencyGraph {
             logManager?.print("Dependency \(className) was not found. instantiating.")
             return nil
         }
-        logManager?.print("Dependency \(description) was found.")
+        logManager?.print("Dependency \(className) was found.")
         return dependency as? T
     }
     
