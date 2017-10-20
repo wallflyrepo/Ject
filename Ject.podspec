@@ -25,12 +25,12 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.author           = { 'superuserdid' => 'jwilliams94.jw@gmail.com' }
-  s.source           = { :git => 'https://github.com/wallflyrepo/Ject.git', :tag => s.version }
+  s.source           = { :git => 'https://github.com/wallflyrepo/Ject.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/hyyypower'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Ject/Classes/*.swift'
+  s.source_files = 'Ject/Classes/**/*'
 
   # s.resource_bundles = {
   #   'Ject' => ['Ject/Assets/*.png']

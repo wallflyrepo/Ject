@@ -11,11 +11,11 @@
 		86593681184FFD76CA95B944539BD0E6 /* Pods-Ject_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1ECEA19B0B6B7597C704D05C997E64 /* Pods-Ject_Tests-dummy.m */; };
 		93EC81047BEFE5DBD7ABE1C8063F7BDE /* Pods-Ject_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 985A989F512B2234CD51C99D1C930B27 /* Pods-Ject_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9EEAFC5AB477229DCDB18F9733E690C4 /* Ject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA20D6EA88C0F126B9F02E7EF8D48B04 /* Ject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E43B13941F7A9B4900FE4F1D /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B13931F7A9B4900FE4F1D /* Injectable.swift */; };
-		E43B13961F7A9B5300FE4F1D /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B13951F7A9B5300FE4F1D /* Graph.swift */; };
-		E43B13981F7A9B6200FE4F1D /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43B13971F7A9B6200FE4F1D /* LogManager.swift */; };
-		E4A3721C1F96DCA60013A7CF /* DependencyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3721A1F96DCA60013A7CF /* DependencyGraph.swift */; };
-		E4A3721D1F96DCA60013A7CF /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3721B1F96DCA60013A7CF /* DependencyManager.swift */; };
+		E4A372411F98E0990013A7CF /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3723C1F98E0990013A7CF /* Graph.swift */; };
+		E4A372421F98E0990013A7CF /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3723D1F98E0990013A7CF /* DependencyManager.swift */; };
+		E4A372431F98E0990013A7CF /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3723E1F98E0990013A7CF /* Injectable.swift */; };
+		E4A372441F98E0990013A7CF /* DependencyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3723F1F98E0990013A7CF /* DependencyGraph.swift */; };
+		E4A372451F98E0990013A7CF /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A372401F98E0990013A7CF /* LogManager.swift */; };
 		E9E8A14FB5709D1F20D613AFD785C866 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		FC0FF5897C24C422E8F3E98C198D6E98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -48,11 +48,11 @@
 		BCD771830B495E30891099C20467174C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C216681605009F4B305A2FBEB5C80332 /* Pods-Ject_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ject_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA20D6EA88C0F126B9F02E7EF8D48B04 /* Ject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ject-umbrella.h"; sourceTree = "<group>"; };
-		E43B13931F7A9B4900FE4F1D /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Injectable.swift; path = ../Sources/Injectable.swift; sourceTree = "<group>"; };
-		E43B13951F7A9B5300FE4F1D /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = ../Sources/Graph.swift; sourceTree = "<group>"; };
-		E43B13971F7A9B6200FE4F1D /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogManager.swift; path = ../Sources/LogManager.swift; sourceTree = "<group>"; };
-		E4A3721A1F96DCA60013A7CF /* DependencyGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyGraph.swift; path = Ject/Classes/DependencyGraph.swift; sourceTree = "<group>"; };
-		E4A3721B1F96DCA60013A7CF /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyManager.swift; path = Ject/Classes/DependencyManager.swift; sourceTree = "<group>"; };
+		E4A3723C1F98E0990013A7CF /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = Ject/Classes/Graph.swift; sourceTree = "<group>"; };
+		E4A3723D1F98E0990013A7CF /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyManager.swift; path = Ject/Classes/DependencyManager.swift; sourceTree = "<group>"; };
+		E4A3723E1F98E0990013A7CF /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Injectable.swift; path = Ject/Classes/Injectable.swift; sourceTree = "<group>"; };
+		E4A3723F1F98E0990013A7CF /* DependencyGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependencyGraph.swift; path = Ject/Classes/DependencyGraph.swift; sourceTree = "<group>"; };
+		E4A372401F98E0990013A7CF /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogManager.swift; path = Ject/Classes/LogManager.swift; sourceTree = "<group>"; };
 		E60509A4185CA44387A6FED79C10252D /* Pods_Ject_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ject_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1ECEA19B0B6B7597C704D05C997E64 /* Pods-Ject_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ject_Tests-dummy.m"; sourceTree = "<group>"; };
 		EDFD7EB5284C4BC12DD7B8173F24A20A /* Pods-Ject_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ject_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -165,11 +165,11 @@
 		F8584A06C6A862F09BE6FDDE320CC809 /* Ject */ = {
 			isa = PBXGroup;
 			children = (
-				E43B13971F7A9B6200FE4F1D /* LogManager.swift */,
-				E43B13951F7A9B5300FE4F1D /* Graph.swift */,
-				E4A3721A1F96DCA60013A7CF /* DependencyGraph.swift */,
-				E4A3721B1F96DCA60013A7CF /* DependencyManager.swift */,
-				E43B13931F7A9B4900FE4F1D /* Injectable.swift */,
+				E4A3723F1F98E0990013A7CF /* DependencyGraph.swift */,
+				E4A3723D1F98E0990013A7CF /* DependencyManager.swift */,
+				E4A3723C1F98E0990013A7CF /* Graph.swift */,
+				E4A3723E1F98E0990013A7CF /* Injectable.swift */,
+				E4A372401F98E0990013A7CF /* LogManager.swift */,
 				6758D873E3F7238AF6461B97B7827FB8 /* Support Files */,
 			);
 			name = Ject;
@@ -278,11 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4A3721C1F96DCA60013A7CF /* DependencyGraph.swift in Sources */,
-				E43B13981F7A9B6200FE4F1D /* LogManager.swift in Sources */,
-				E43B13961F7A9B5300FE4F1D /* Graph.swift in Sources */,
-				E43B13941F7A9B4900FE4F1D /* Injectable.swift in Sources */,
-				E4A3721D1F96DCA60013A7CF /* DependencyManager.swift in Sources */,
+				E4A372451F98E0990013A7CF /* LogManager.swift in Sources */,
+				E4A372441F98E0990013A7CF /* DependencyGraph.swift in Sources */,
+				E4A372431F98E0990013A7CF /* Injectable.swift in Sources */,
+				E4A372411F98E0990013A7CF /* Graph.swift in Sources */,
+				E4A372421F98E0990013A7CF /* DependencyManager.swift in Sources */,
 				08F0D4A1F184A6F927F66F38E4653DDC /* Ject-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
