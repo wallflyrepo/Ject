@@ -22,7 +22,7 @@ public protocol Injectable {
      * Should always return an instance of the class itself (which implements Injectable).
      * Here you can inject dependencies the current dependency needs.
      **/
-    func inject(dependencyGraph: Graph) -> Injectable
+    func inject(dependencyGraph: DependencyGraph) -> Injectable
     
     /**
      * Return true if only one instance of the Injectable class should live and false if it should be
